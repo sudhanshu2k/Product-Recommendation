@@ -471,10 +471,10 @@ Predict_sort = df_Predict_features.reindex(columns=sorted(df_Predict_features.co
 
 # determine class labels in Predict data set that are not in Train
 col_train_add = set(Predict_sort.columns) - set(Train_sort.columns)
-print len(col_train_add)
+print(len(col_train_add))
 # determine class labels in Train data set that are not in Predict
 col_predict_add = set(Train_sort.columns) - set(Predict_sort.columns)
-print len(col_predict_add)
+print(len(col_predict_add))
 
 
 # In[34]:
@@ -488,10 +488,10 @@ for col in col_predict_add:
     
 # verify that the columns are the same for both data sets
 col_train_add = set(Predict_sort.columns) - set(Train_sort.columns)
-print len(col_train_add)
+print(len(col_train_add))
 # verify that the columns are the same for both data sets
 col_predict_add = set(Train_sort.columns) - set(Predict_sort.columns)
-print len(col_predict_add)
+print(len(col_predict_add))
 
 
 # In[35]:
