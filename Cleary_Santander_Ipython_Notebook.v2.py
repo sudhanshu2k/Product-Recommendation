@@ -706,8 +706,8 @@ XGB_out_df.to_csv('XGB_150.csv', index=False)
 
 Logistic_out_df.to_csv('Logistic_defaults_GridSearch2.csv', index=False)
 
-print len(XGB_out_df)
-print len(Logistic_out_df)
+print(len(XGB_out_df))
+print(len(Logistic_out_df))
 
 bst_Logistic
 
