@@ -13,7 +13,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 #get_ipython().magic('pylab inline')
-pylab.rcParams['figure.figsize'] = (10, 6)
+#pylab.rcParams['figure.figsize'] = (10, 6)
 color = sns.color_palette()
 import xgboost as xgb
 from xgboost import XGBClassifier
