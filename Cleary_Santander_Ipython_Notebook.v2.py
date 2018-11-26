@@ -266,8 +266,8 @@ df_May_June2015['indrel_1mes'] = coding(df_May_June2015['indrel_1mes'],
 def num_missing(x):
   return sum(x==-1)
 
-print "TRAINING Missing values per Numeric column:"
-print df_May_June2015[numeric_cols].apply(num_missing, axis=0)
+print("TRAINING Missing values per Numeric column:")
+print(df_May_June2015[numeric_cols].apply(num_missing, axis=0))
 
 
 # In[18]:
@@ -275,8 +275,8 @@ print df_May_June2015[numeric_cols].apply(num_missing, axis=0)
 def num_missing(x):
   return sum(x == -1)
 
-print "Testing Missing values per Numeric column:"
-print df_June2016_PREDICT[numeric_cols].apply(num_missing, axis=0)
+print("Testing Missing values per Numeric column:")
+print(df_June2016_PREDICT[numeric_cols].apply(num_missing, axis=0))
 
 
 # In[19]:
@@ -331,11 +331,11 @@ df_June2016_PREDICT["age"].fillna(df_June2016_PREDICT["age"].mean(),inplace=True
 
 # In[22]:
 
-print "Maximum Income from Training set"
-print df_May_June2015.renta.max()
-print "Median Income from Training set"
+print("Maximum Income from Training set")
+print(df_May_June2015.renta.max())
+print("Median Income from Training set")
 median_Income = df_May_June2015.renta.median()
-print median_Income
+print(median_Income)
 with sns.plotting_context("notebook",font_scale=1.5):
     sns.set_style("whitegrid")
     sns.distplot(df_May_June2015["renta"],
@@ -383,9 +383,9 @@ df_June2016_PREDICT.loc[df_June2016_PREDICT.renta < 0,"renta"] = median_Income
 
 # In[25]:
 
-print "Recode missing values to the most frequent Sales Channel:"
+print("Recode missing values to the most frequent Sales Channel:")
 mode_cod_prov = df_May_June2015.cod_prov.mode()[0]
-print mode_cod_prov
+print(mode_cod_prov)
 # Training Data Set
 df_May_June2015.loc[df_May_June2015.cod_prov <0,"cod_prov"]= mode_cod_prov
 # Kaggle Data Set
@@ -437,17 +437,17 @@ X = df_May_June2015.iloc[:,:-1]
 # Subset Y variable for predictions as array
 Y = np.ravel(df_May_June2015.Y_vars)
 X_test = df_June2016_PREDICT
-print  X.shape
-print Y.shape
-print X_test.shape
+print(X.shape)
+print(Y.shape)
+print(X_test.shape)
 
 
 # In[29]:
 
 df_Train_features = preprocess_features(X)
 df_Predict_features = preprocess_features(X_test)
-print "Processed feature columns ({} total features):".format(len(df_Train_features.columns))
-print "Processed feature columns ({} total features):".format(len(df_Predict_features.columns))
+print("Processed feature columns ({} total features):".format(len(df_Train_features.columns)))
+print("Processed feature columns ({} total features):".format(len(df_Predict_features.columns)))
 
 
 # In[30]:
@@ -519,9 +519,9 @@ Y = np.ravel(df2_May_June2015.Y)
 X_test = df2_June2016_PREDICT
 
 # check the shapes match after all the pre-processing and manipulation
-print Y.shape
-print X.shape
-print X_test.shape
+print(Y.shape)
+print(X.shape)
+print(X_test.shape)
 
 
 # ##### Scaling Features: Numeric Values 
@@ -555,7 +555,7 @@ indices  = indices[:25]
 # In[39]:
 
 sum_x = np.sum(importances[indices])
-print 'Total percent contribution of the top {} features is {:.2%}:'.format(25,(sum_x))
+print('Total percent contribution of the top {} features is {:.2%}:'.format(25,(sum_x)))
 
 for f in range(len(indices)):
     print ("%2d %-*s %f" % (f,30,feat_labels_Train[indices[f]],importances[indices[f]]))
@@ -658,8 +658,8 @@ Logistic_log_loss_GS = Logistic_model_fit.grid_scores_
 bst_xgb = xgb_model_fit.best_estimator_
 bst_Logistic = Logistic_model_fit.best_estimator_
 
-print "XGB Gridsearch results: {}".format(XGB_log_loss_GS)
-print "Logistic Gridsearch : {}".format(Logistic_log_loss_GS)
+print("XGB Gridsearch results: {}".format(XGB_log_loss_GS))
+print("Logistic Gridsearch : {}".format(Logistic_log_loss_GS))
 
 
 # In[46]:
